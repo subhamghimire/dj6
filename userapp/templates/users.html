@@ -5,23 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Users</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-  <h1>Here are users for userapp</h1>
-  {% if users %}
-
-  <ol>
-    {% for person in users %}
-    <li>User info</li>
-    <ul>
-      <li>First name : {{ person.first_name }}</li>
-      <li>Last name : {{ person.last_name }}</li>
-      <li>Email : {{ person.email }}</li>
-    </ul>
-    {% endfor %}
-  </ol>
-
-
-  {% endif %}
+  <div class="container">
+    <h1>Please Sign up here!</h1>
+    <form method="POST">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <input type="submit" class="btn btn-primary" value="submit"></input>
+    </form>
+    </div>
 </body>
 </html>
